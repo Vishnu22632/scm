@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
     <title>home page</title>
+    
+    
 
-    <style>
-        .container{
-            margin: auto;
-            width: 50%;
-            padding: 30px;
-            background: #e2e2e2;
-        }
-
-    </style>
+    
 </head>
 <body>
 
-    <div class="container">
-        <h1 th:text="${name}">This is home page in scm</h1>
-        <h2 data-th-text="${city}"></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    <div class= "w-1/2 p-3 text-red-900 bg-gray-200 m-auto">
+        <h1 class="text-center text-2xl" th:text="${name}"></h1>
+        <p th:text="${city}"></p>
+
+        <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Quia quas dicta suscipit laborum fugit soluta vel inventore labore,
              sit nihil facilis quod rerum aliquid nesciunt voluptates quis aut 
              vitae! Animi, dolor aspernatur iure sit cumque rem ex incidunt 
              delectus ullam.</p>
 
+             <button class="w-auto
+             hover:bg-red-900 px-3 py-3 rounded bg-blue-700 text-white">Click here</button>
+
     </div>
+
+
+
+    <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+        </a>
+        
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
     
 </body>
 </html>
