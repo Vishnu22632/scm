@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
     <title>Service page</title>
 </head>
@@ -7,11 +7,13 @@
     <h1>This is about page</h1>
 
     <div id="content">
-        <h1>This is service content for testing purpose</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, debitis omnis. Quisquam impedit est facere!</p>
+        <h1>This is service page</h1>
+        
 
     </div>
 
-   
+   <script>
+    console.log("service page...");
+   </script>
 </body>
 </html>

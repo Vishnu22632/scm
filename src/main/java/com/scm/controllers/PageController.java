@@ -29,4 +29,20 @@ public class PageController {
         return "services";
     }
 
+
+    @GetMapping("/contact")
+    public String contact(){
+        return "contact";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/signup")
+    public String signup(){
+        return "signup";
+    }
+
 }

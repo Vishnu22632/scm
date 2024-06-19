@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
+class="dark"
 xmlns:th="http://www.thymeleaf.org"
 th:fragment="parent(content,title,script)"
 >
@@ -12,32 +13,21 @@ th:fragment="parent(content,title,script)"
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 
 </head>
-<body>
+<body class="dark:bg-gray-900 dark:text-white">
     
 
-    <!-- common header -->
-    <ul class="p-4">
-        <li>
-            <a th:href="@{'/home'}">Home</a>
-        </li>
-        <li>
-            <a th:href="@{'/services'}">Services</a>
-        </li>
-        <li>
-            <a th:href="@{'/about'}">About</a>
-        </li>
-    </ul>
+   <div th:replace="navbar :: navbar "></div>
 
 
     <!-- main content -->
-    <section th:replace="${content}"></section>
+     <div class="h-full p-4 w-full">
+        <section th:replace="${content}"></section>
+     </div>
+    
 
-
-
-    <!-- common footer -->
-
-    <footer class="p-4">SCM--all right reserved...</footer>
-
+    <!-- footer section -->
+    <div th:replace="footer :: footer"></div>
+    
 
      <!-- flowbit link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
