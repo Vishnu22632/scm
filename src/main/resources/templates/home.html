@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -45,5 +45,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
     
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Home page</title>
+</head>
+<body>
+    <h1>This is about page</h1>
+
+    <div id="content">
+        <h1>This is home page content </h1>
+
+
+    </div>
+
+    <script>
+
+        console.log("Home page");
+    </script>
+
 </body>
 </html>

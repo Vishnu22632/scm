@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About page</title>
 </head>
 <body>
     <h1>This is about page</h1>
-    
-    
-    <div class="host-tag" th:replace="~{base :: parent(~{::section})}">
 
-    <section>
-        <h1>This is dynamic content</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur!</p>
-    </section>
+    <div id="content">
+        <h1>This is about page content for testing purpose</h1>
+
 
     </div>
+
+    <script>
+
+        console.log("about page...");
+    </script>
+
 </body>
 </html>
