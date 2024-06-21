@@ -1,0 +1,2 @@
+cd src/main/resources/static/css 
+npx tailwindcss -i input.css -o output.css --watch
