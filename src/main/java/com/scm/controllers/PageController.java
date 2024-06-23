@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.scm.entities.User;
 import com.scm.forms.UserForm;
+import com.scm.helpers.Message;
+import com.scm.helpers.MessageType;
 import com.scm.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class PageController {
@@ -59,7 +63,7 @@ public class PageController {
     }
 
     @PostMapping("/do_register")
-    public String processRegister(@ModelAttribute UserForm userForm){
+    public String processRegister(@ModelAttribute UserForm userForm, HttpSession session){
         System.out.println("process register...");
 
         //fetch form data
@@ -69,15 +73,24 @@ public class PageController {
         // Todo 
 
         //save to database
-        User user=User.builder()
-        .name(userForm.getName())
-        .email(userForm.getEmail())
-        .password(userForm.getPassword())
-        .phoneNumber(userForm.getPhoneNumber())
-        .about(userForm.getAbout())
-        .profilePic("https://www.iconfinder.com/icons/403017/avatar_default_head_person_unknown_user_anonym_icon")
+        // User user=User.builder()
+        // .name(userForm.getName())
+        // .email(userForm.getEmail())
+        // .password(userForm.getPassword())
+        // .phoneNumber(userForm.getPhoneNumber())
+        // .about(userForm.getAbout())
+        // .profilePic("https://www.iconfinder.com/icons/403017/avatar_default_head_person_unknown_user_anonym_icon")
         
-        .build();
+        // .build();
+
+
+        User user=new User();
+        user.setName(userForm.getName());
+        user.setEmail(userForm.getEmail());
+        user.setPassword(userForm.getPassword());
+        user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setAbout(userForm.getAbout());
+        user.setProfilePic("https://www.iconfinder.com/icons/403017/avatar_default_head_person_unknown_user_anonym_icon");
 
         User savedUser= userService.saveUser(user);
 
@@ -85,6 +98,16 @@ public class PageController {
 
 
         //message = "Registration successful"
+
+       
+        // add the message
+
+       Message message= Message.builder().content("Registration Successful !!!").type(MessageType.blue).build();
+        session.setAttribute("message", message);
+
+    
+
+       
 
 
         //redirect to login page
